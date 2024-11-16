@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> ke[100001];
+bool vst[100001];
+vector<int> topo;
+int n,m;
+
+void input(){
+	cin>>n>>m;
+	for(int i = 0 ; i<m;i++){
+		int u,w;cin>>u>>w;
+		ke[u].push_back(w);
+	}
+	memset(vst, false , sizeof(vst));
+	for(int i = 0 ; i<m;i++){
+		sort(begin(ke[i]),end(ke[i]));
+	}
+}
+
+void DFS(int u){
+	vst[u]=true;
+	for(int x : ke[u]){
+		if(!vst[x]){
+			DFS(x); 
+		}
+	}
+	topo.push_back(u);
+}
+
+int main(){
+	input();
+	for(int i = 1;i<=n;i++){
+		if(!vst[i]){
+			DFS(i);
+		}
+	}
+	reverse(topo.begin(),topo.end());
+	for(int x : topo){
+		cout << x << " ";
+	}
+	return 0;
+}
