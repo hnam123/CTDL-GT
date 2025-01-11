@@ -1,4 +1,4 @@
-/*Đồ thị vô hướng*/
+/*�? th? v� hu?ng*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -12,7 +12,7 @@ void input(){
         int x,y;
         cin>>x>>y;
         ke[x].push_back(y);
-        ke[y].push_back(x); // có hướng thì chỉ cần bỏ dòng này đi là xong
+        ke[y].push_back(x); // c� hu?ng th� ch? c?n b? d�ng n�y di l� xong
     }
     for(int i = 1;i<=n;i++){
         sort(ke[i].begin(),ke[i].end());

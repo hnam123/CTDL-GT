@@ -4,7 +4,6 @@ using namespace std;
 struct item{
 	int p;
 	int wt;
-	
 	item(int p,int wt){
 		this->p = p;
 		this->wt= wt;
